@@ -1,4 +1,4 @@
-package dev.tonimatas.smanager;
+package dev.tonimatas.maven;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
