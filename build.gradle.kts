@@ -9,7 +9,7 @@ group = "dev.tonimatas"
 version = "0.0.1-SNAPSHOT"
 
 base {
-    archivesName.set("Maven")
+    archivesName.set("Api")
 }
 
 java {
