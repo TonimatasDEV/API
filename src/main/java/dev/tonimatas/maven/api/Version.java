@@ -6,7 +6,7 @@ public class Version {
     private String version;
 
     public Version() {
-        File filesFolder = new File("files");
+        File filesFolder = new File("1201");
 
         if (!filesFolder.exists()) {
             this.version = "error";

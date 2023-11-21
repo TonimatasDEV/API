@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LatestController {
-    @GetMapping("/latest")
+    @GetMapping("1.20.1/latest")
     public Version getLatestVersion() {
         return new Version();
     }

@@ -15,9 +15,9 @@ import java.nio.file.Paths;
 
 @RestController
 public class DownloadController {
-    @GetMapping("/download/")
+    @GetMapping("1.20.1/download/")
     public ResponseEntity<Resource> downloadFile() throws IOException {
-        File filesFolder = new File("files");
+        File filesFolder = new File("1201");
         String fileName = null;
 
         if (!filesFolder.exists()) {
@@ -35,12 +35,12 @@ public class DownloadController {
             break;
         }
 
-        Path filePath = Paths.get("files", fileName);
+        Path filePath = Paths.get("1201", fileName);
         Resource resource = new UrlResource(filePath.toUri());
 
         if (resource.exists() && resource.isReadable()) {
             HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filesFolder);
+            headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + fileName);
             return ResponseEntity.ok()
                     .headers(headers)
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)

@@ -15,17 +15,17 @@ import java.io.IOException;
 
 @Controller
 public class UploadController {
-    @PostMapping("/upload/{id}")
+    @PostMapping("1.20.1/upload/{id}")
     public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file, @PathVariable String id) {
         if (!file.isEmpty() && id.equals(Main.id)) {
             try {
                 byte[] bytes = file.getBytes();
 
-                File fileFolder = new File("files");
-                fileFolder.delete();
+                File fileFolder = new File("1201");
+                if (fileFolder.exists()) fileFolder.delete();
                 fileFolder.mkdir();
 
-                String filePath = "files/" + file.getOriginalFilename();
+                String filePath = "1201/" + file.getOriginalFilename();
 
                 BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(filePath));
                 stream.write(bytes);
