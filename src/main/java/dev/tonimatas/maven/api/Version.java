@@ -5,8 +5,8 @@ import java.io.File;
 public class Version {
     private String version;
 
-    public Version() {
-        File filesFolder = new File("1201");
+    public Version(String version) {
+        File filesFolder = new File(version);
 
         if (!filesFolder.exists()) {
             this.version = "error";

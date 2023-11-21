@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class LatestController {
     @GetMapping("1.20.1/latest")
     public Version getLatestVersion() {
-        return new Version();
+        return new Version("1201");
     }
 }
