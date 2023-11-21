@@ -12,6 +12,8 @@ public class Main {
     public static String id;
 
     public static void main(String[] args) {
+        new File("1201").mkdir();
+
         try {
             Scanner scanner = new Scanner(new File("id.txt"));
             id = scanner.next();

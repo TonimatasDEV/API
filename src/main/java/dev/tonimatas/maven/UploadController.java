@@ -22,8 +22,13 @@ public class UploadController {
                 byte[] bytes = file.getBytes();
 
                 File fileFolder = new File("1201");
-                if (fileFolder.exists()) fileFolder.delete();
-                fileFolder.mkdir();
+
+                File[] files = fileFolder.listFiles();
+                if (files != null) {
+                    for (File var : files) {
+                        var.delete();
+                    }
+                }
 
                 String filePath = "1201/" + file.getOriginalFilename();
 

@@ -8,11 +8,6 @@ public class Version {
     public Version(String version) {
         File filesFolder = new File(version);
 
-        if (!filesFolder.exists()) {
-            this.version = "error";
-            return;
-        }
-
         File[] files = filesFolder.listFiles();
 
         if (files == null) {

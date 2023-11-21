@@ -15,14 +15,11 @@ import java.nio.file.Paths;
 
 @RestController
 public class DownloadController {
-    @GetMapping("1.20.1/download/")
+    @GetMapping("1.20.1/download")
     public ResponseEntity<Resource> downloadFile() throws IOException {
         File filesFolder = new File("1201");
         String fileName = null;
 
-        if (!filesFolder.exists()) {
-            return ResponseEntity.internalServerError().build();
-        }
 
         File[] files = filesFolder.listFiles();
 
@@ -31,7 +28,7 @@ public class DownloadController {
         }
 
         for (File file : files) {
-            fileName = file.getName().split("-")[3];
+            fileName = file.getName();
             break;
         }
 
